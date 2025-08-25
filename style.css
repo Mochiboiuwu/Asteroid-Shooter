@@ -1,0 +1,76 @@
+body {
+    background-image: url('img/orig_big.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+    font-size: 2.5em;
+    animation: rgb-glow 3s infinite alternate;
+}
+
+#gameCanvas {
+    background-color: rgba(26, 26, 26, 0.5); 
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    animation: rgb-glow 3s infinite alternate;
+}
+
+#gameUI {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+#scoreDisplay {
+    font-size: 1.5em;
+    text-shadow: 0 0 5px #00ff00;
+    animation: rgb-glow 3s infinite alternate;
+}
+
+#resetButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #000;
+    background-color: #00ff00;
+    border: none;
+    cursor: pointer;
+    animation: rgb-glow 3s infinite alternate;
+}
+
+@keyframes rgb-glow {
+    0% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    }
+    16% {
+        box-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00;
+    }
+    33% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    }
+    50% {
+        box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+    66% {
+        box-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff;
+    }
+    83% {
+        box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    }
+}
