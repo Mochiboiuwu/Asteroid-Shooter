@@ -1,17 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>Asteroid-Shooter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Shooter - Elite Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Asteroid-Shooter</h1>
-    <div id="gameUI">
-        <div id="scoreDisplay">Punkte: 0</div>
-        <button id="resetButton" style="display: none;">Neu starten</button>
-    </div>
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div class="stars"></div>
     
+    <div class="container">
+        <div class="header">
+            <h1 class="title">
+                <span class="title-text">ASTEROID</span>
+                <span class="title-text-alt">SHOOTER</span>
+            </h1>
+            <div class="subtitle">ELITE EDITION</div>
+        </div>
+
+        <div id="gameUI" class="game-ui">
+            <div id="scoreDisplay" class="score-display">
+                <div class="score-label">SCORE</div>
+                <div class="score-value">0</div>
+            </div>
+            <div class="combo-display" id="comboDisplay" style="display: none;">
+                <div class="combo-label">COMBO</div>
+                <div class="combo-value" id="comboValue">x1</div>
+            </div>
+            <div id="healthDisplay" class="health-display">
+                <div class="health-label">HEALTH</div>
+                <div class="health-bar">
+                    <div id="healthBar" class="health-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="1200" height="700"></canvas>
+        
+        <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+            <div class="game-over-content">
+                <h2 class="game-over-title">GAME OVER</h2>
+                <div class="game-over-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">FINAL SCORE</span>
+                        <span class="stat-value" id="finalScore">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ASTEROIDS DESTROYED</span>
+                        <span class="stat-value" id="asteroidsDestroyed">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ACCURACY</span>
+                        <span class="stat-value" id="accuracy">0%</span>
+                    </div>
+                </div>
+                <button id="resetButton" class="reset-button">RESTART MISSION</button>
+            </div>
+        </div>
+
+        <div class="controls-info">
+            <div class="control-item">← → or A/D = Move</div>
+            <div class="control-item">SPACE = Shoot</div>
+            <div class="control-item">SHIFT = Boost</div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

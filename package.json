@@ -1,35 +1,63 @@
 {
-  "name": "asteroid-shooter",
+  "name": "asteroid-shooter-elite",
   "version": "1.0.0",
-  "description": "Ein cooler Asteroid-Shooter.",
+  "description": "Asteroid Shooter - Elite Edition. Ein hochwertiges Asteroid-Shooter Spiel mit modernem Design.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win --x64"
+    "build": "electron-builder --win --x64 --publish never"
   },
-  "keywords": [],
-  "author": "Dein Name",
-  "license": "ISC",
+  "keywords": [
+    "game",
+    "asteroid",
+    "shooter",
+    "electron"
+  ],
+  "author": "Asteroid Shooter Studio",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^26.0.0",
+    "electron": "^27.0.0",
     "electron-builder": "^24.6.4"
   },
   "build": {
-    "appId": "com.deinname.asteroidshooter",
-    "productName": "Asteroid-Shooter",
+    "appId": "com.asteroidshooter.elite",
+    "productName": "Asteroid Shooter Elite",
     "win": {
-      "target": "nsis",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Asteroid Shooter Elite"
     },
     "files": [
       "main.js",
+      "preload.js",
       "index.html",
       "script.js",
       "style.css",
-      "img/**/*"
+      "img/**/*",
+      "build/icon.ico"
     ],
     "directories": {
-      "output": "dist"
+      "output": "dist",
+      "buildResources": "build"
     }
   }
 }
